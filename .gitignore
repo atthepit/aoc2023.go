@@ -19,3 +19,9 @@
 
 # Go workspace file
 go.work
+
+# Executable
+aoc2023
+
+# Final input in repo
+solutions/*-final.txt
