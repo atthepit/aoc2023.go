@@ -22,14 +22,23 @@ func main() {
 	}
 
 	scanner := bufio.NewScanner(reader)
+	solution := -1
 
-	if *day == 1 {
-		solution, err := solutions.Day01(scanner, *part)
-		if err != nil {
-			fmt.Println(err.Error())
-			os.Exit(1)
-		}
+	switch *day {
+	case 1:
+		solution, err = solutions.Day01(scanner, *part)
+		break
+	case 2:
+		solution, err = solutions.Day02(scanner, *part)
+		break
+	}
 
+	if err != nil {
+		fmt.Println(err.Error())
+		os.Exit(1)
+	}
+
+	if solution != -1 {
 		fmt.Println(solution)
 		os.Exit(0)
 	}
